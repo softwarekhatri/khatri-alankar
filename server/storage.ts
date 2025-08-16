@@ -20,7 +20,7 @@ export class MemStorage implements IStorage {
   constructor() {
     this.users = new Map();
     this.products = new Map();
-    
+
     // Initialize with sample products
     this.initializeProducts();
   }
@@ -36,7 +36,11 @@ export class MemStorage implements IStorage {
         gender: "Female",
         weight: "3.5g",
         price: "125000.00",
-        images: ["https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"],
+        images: [
+          "https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+          "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+          "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"
+        ],
         isNew: true,
         isOnSale: false,
         isFeatured: false,
@@ -51,7 +55,11 @@ export class MemStorage implements IStorage {
         gender: "Female",
         weight: "45g",
         price: "185000.00",
-        images: ["https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"],
+        images: [
+          "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+          "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+          "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"
+        ],
         isNew: false,
         isOnSale: false,
         isFeatured: true,
@@ -66,7 +74,11 @@ export class MemStorage implements IStorage {
         gender: "Female",
         weight: "8g",
         price: "65000.00",
-        images: ["https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"],
+        images: [
+          "https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+          "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+          "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"
+        ],
         isNew: false,
         isOnSale: true,
         isFeatured: false,
@@ -81,7 +93,11 @@ export class MemStorage implements IStorage {
         gender: "Female",
         weight: "32g",
         price: "95000.00",
-        images: ["https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"],
+        images: [
+          "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+          "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+          "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"
+        ],
         isNew: false,
         isOnSale: false,
         isFeatured: false,
@@ -151,7 +167,23 @@ export class MemStorage implements IStorage {
 
     sampleProducts.forEach(product => {
       const id = randomUUID();
-      this.products.set(id, { ...product, id });
+      const fullProduct: Product = {
+        id,
+        name: product.name,
+        code: product.code,
+        description: product.description,
+        category: product.category,
+        metalType: product.metalType,
+        gender: product.gender,
+        weight: product.weight ?? null,
+        price: product.price ?? null,
+        images: product.images ?? [],
+        isNew: product.isNew ?? null,
+        isOnSale: product.isOnSale ?? null,
+        isFeatured: product.isFeatured ?? null,
+        availableSizes: product.availableSizes ?? null,
+      };
+      this.products.set(id, fullProduct);
     });
   }
 
@@ -182,7 +214,23 @@ export class MemStorage implements IStorage {
 
   async createProduct(insertProduct: InsertProduct): Promise<Product> {
     const id = randomUUID();
-    const product: Product = { ...insertProduct, id };
+    // Ensure all required Product fields are present and nullable fields are set to null if missing
+    const product: Product = {
+      id,
+      name: insertProduct.name,
+      code: insertProduct.code,
+      description: insertProduct.description,
+      category: insertProduct.category,
+      metalType: insertProduct.metalType,
+      gender: insertProduct.gender,
+      weight: insertProduct.weight ?? null,
+      price: insertProduct.price ?? null,
+      images: insertProduct.images ?? [],
+      isNew: insertProduct.isNew ?? null,
+      isOnSale: insertProduct.isOnSale ?? null,
+      isFeatured: insertProduct.isFeatured ?? null,
+      availableSizes: insertProduct.availableSizes ?? null,
+    };
     this.products.set(id, product);
     return product;
   }

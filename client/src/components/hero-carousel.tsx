@@ -36,9 +36,8 @@ export function HeroCarousel() {
       {carouselImages.map((image, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? 'opacity-100' : 'opacity-0'
-          }`}
+          className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
+            }`}
         >
           <img
             src={image.url}
@@ -55,11 +54,10 @@ export function HeroCarousel() {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-opacity duration-300 ${
-              index === currentSlide 
-                ? 'bg-luxury-gold opacity-100' 
+            className={`w-3 h-3 rounded-full transition-opacity duration-300 ${index === currentSlide
+                ? 'bg-luxury-gold opacity-100'
                 : 'bg-white opacity-50 hover:opacity-75'
-            }`}
+              }`}
             data-testid={`carousel-dot-${index}`}
           />
         ))}

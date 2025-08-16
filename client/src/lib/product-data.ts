@@ -10,7 +10,11 @@ export const sampleProducts: Omit<Product, 'id'>[] = [
     gender: "Female",
     weight: "3.5g",
     price: "125000.00",
-    images: ["https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"],
+    images: [
+      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+      "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"
+    ],
     isNew: true,
     isOnSale: false,
     isFeatured: false,
@@ -25,7 +29,11 @@ export const sampleProducts: Omit<Product, 'id'>[] = [
     gender: "Female",
     weight: "45g",
     price: "185000.00",
-    images: ["https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"],
+    images: [
+      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+      "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"
+    ],
     isNew: false,
     isOnSale: false,
     isFeatured: true,
@@ -40,7 +48,11 @@ export const sampleProducts: Omit<Product, 'id'>[] = [
     gender: "Female",
     weight: "8g",
     price: "65000.00",
-    images: ["https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"],
+    images: [
+      "https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+      "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"
+    ],
     isNew: false,
     isOnSale: true,
     isFeatured: false,
@@ -55,7 +67,11 @@ export const sampleProducts: Omit<Product, 'id'>[] = [
     gender: "Female",
     weight: "32g",
     price: "95000.00",
-    images: ["https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"],
+    images: [
+      "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+      "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"
+    ],
     isNew: false,
     isOnSale: false,
     isFeatured: false,
