@@ -104,7 +104,7 @@ export function ContactForm() {
                   60% { transform: translateY(8px) scale(0.95); }
                 }
               `}</style>
-              <h3 className="text-xl sm:text-2xl font-playfair font-bold text-elegant-black mb-1 sm:mb-2 drop-shadow">Message us on WhatsApp</h3>
+              <h3 className="text-6xl sm:text-2xl font-playfair font-bold text-elegant-black mb-1 sm:mb-2 drop-shadow">Message us on WhatsApp</h3>
               <p className="text-gray-700 mb-3 sm:mb-4 text-sm sm:text-base font-medium drop-shadow">Quick queries? Tap below to chat instantly.</p>
               <a
                 href="https://wa.me/919934799534?text=Hi%20Khatri%20Alankar%2C%20I%20have%20a%20jewelry%20inquiry."

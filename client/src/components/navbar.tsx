@@ -18,10 +18,9 @@ export function Navbar({ onNavigate }: NavbarProps) {
   }, []);
 
   return (
-    <nav 
-      className={`relative z-50 px-6 py-6 lg:px-12 lg:py-8 transition-all duration-300 ${
-        isScrolled ? 'bg-black bg-opacity-90 backdrop-blur-sm shadow-lg' : ''
-      }`}
+    <nav
+      className={`relative z-50 px-6 py-6 lg:px-12 lg:py-8 transition-all duration-300 ${isScrolled ? 'bg-black bg-opacity-90 backdrop-blur-sm shadow-lg' : ''
+        }`}
     >
       <div className="flex items-center justify-between max-w-7xl mx-auto">
         {/* Brand Logo */}
@@ -37,22 +36,22 @@ export function Navbar({ onNavigate }: NavbarProps) {
 
         {/* Desktop Navigation Links */}
         <div className="hidden md:flex items-center space-x-8 lg:space-x-12">
-          <button 
-            onClick={() => onNavigate('catalogue')} 
+          <button
+            onClick={() => onNavigate('catalogue')}
             className="text-white hover:text-luxury-gold transition-colors duration-300 font-medium"
             data-testid="nav-link-catalogue"
           >
             Catalogue
           </button>
-          <button 
-            onClick={() => onNavigate('about')} 
+          <button
+            onClick={() => onNavigate('about')}
             className="text-white hover:text-luxury-gold transition-colors duration-300 font-medium"
             data-testid="nav-link-about"
           >
             About Us
           </button>
-          <button 
-            onClick={() => onNavigate('contact')} 
+          <button
+            onClick={() => onNavigate('contact')}
             className="text-white hover:text-luxury-gold transition-colors duration-300 font-medium"
             data-testid="nav-link-contact"
           >
@@ -61,35 +60,34 @@ export function Navbar({ onNavigate }: NavbarProps) {
         </div>
 
         {/* Mobile Menu Button */}
-        <button 
+        <button
           className="md:hidden text-white text-2xl"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           data-testid="button-mobile-menu"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinecap="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            <path strokeLinecap="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
       </div>
 
       {/* Mobile Navigation Menu */}
-      <div className={`md:hidden absolute top-full left-0 right-0 bg-black bg-opacity-95 backdrop-blur-sm transition-all duration-300 ${
-        isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
-      }`}>
+      <div className={`md:hidden absolute top-full left-0 right-0 bg-black bg-opacity-95 backdrop-blur-sm transition-all duration-300 ${isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
+        }`}>
         <div className="px-6 py-6 space-y-4">
-          <button 
+          <button
             onClick={() => { onNavigate('catalogue'); setIsMobileMenuOpen(false); }}
             className="block text-white hover:text-luxury-gold transition-colors duration-300 font-medium py-2"
           >
             Catalogue
           </button>
-          <button 
+          <button
             onClick={() => { onNavigate('about'); setIsMobileMenuOpen(false); }}
             className="block text-white hover:text-luxury-gold transition-colors duration-300 font-medium py-2"
           >
             About Us
           </button>
-          <button 
+          <button
             onClick={() => { onNavigate('contact'); setIsMobileMenuOpen(false); }}
             className="block text-white hover:text-luxury-gold transition-colors duration-300 font-medium py-2"
           >
